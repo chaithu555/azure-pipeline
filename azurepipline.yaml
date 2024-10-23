@@ -42,6 +42,7 @@ steps:
          mkdir -p ~/.m2
           cp "$(settings1xml.secureFilePath)" ~/.m2/settings1.xml          
 
+  
   - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
@@ -54,4 +55,6 @@ steps:
       mavenVersionOption: 'Default'
       effectivePomSkip: true
       sonarQubeRunAnalysis: false
-      goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dserver=$(server) -Denvironment=Sandbox -Dworkers=1 -Dusername=$(username) -Dpassword=$(password)'
+      goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dserver=$(server) 
+      -Denvironment=$(environment) -Dworkers=$(workers) -DworkerType=$(workerType) 
+      -DmuleVersion=$(muleVersion) -Dusername=$(username) -Dpassword=$(password)'
