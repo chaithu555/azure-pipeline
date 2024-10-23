@@ -14,7 +14,7 @@ trigger:
       - pom.xml
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
   
 variables:
   - group: Build-Variable-Group
@@ -39,8 +39,8 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        New-Item -Type Directory -Force "C:\Users\admin\.m2"
-        Copy-Item -Force "$(settings1xml.secureFilePath)" "C:\Users\admin\.m2\settings1.xml"              
+       mkdir -p ~/.m2
+        cp "$(settings1xml.secureFilePath)" ~/.m2/settings1.xml             
 
   - task: Maven@3
     inputs:
