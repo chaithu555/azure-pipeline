@@ -40,7 +40,7 @@
 						<environment>${environment}</environment>
 						<objectStoreV2>true</objectStoreV2>
 						<region>us-east-2</region>
-						<workers>$(workers}</workers>
+						<workers>${workers}</workers>
 						<workerType>${workerType}</workerType>
 						<properties>
 							<key>value</key>
