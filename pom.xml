@@ -32,16 +32,16 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<server>$(server)</server>
-						<muleVersion>4.4.0</muleVersion>
-						<username>chaithanya_oct10</username>
-						<password>Chaithu@516</password>
-						<applicationName>azuredevops-demo</applicationName>
-						<environment>Sandbox</environment>
+						<server>${server}</server>
+						<muleVersion>${muleVersion}</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>
+						<applicationName>${app.name}</applicationName>
+						<environment>${environment}</environment>
 						<objectStoreV2>true</objectStoreV2>
 						<region>us-east-2</region>
-						<workers>1</workers>
-						<workerType>MICRO</workerType>
+						<workers>$(workers}</workers>
+						<workerType>${workerType}</workerType>
 						<properties>
 							<key>value</key>
 						</properties>
