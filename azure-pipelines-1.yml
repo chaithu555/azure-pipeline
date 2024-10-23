@@ -43,18 +43,18 @@ steps:
           cp "$(settings1xml.secureFilePath)" ~/.m2/settings1.xml          
 
   - task: Maven@3
-inputs:
-  mavenPomFile: 'pom.xml'
-  mavenOptions: '-Xmx3072m'
-  jdkVersionOption: '1.8'
-  jdkArchitectureOption: 'x64'
-  mavenAuthenticateFeed: true
-  publishJUnitResults: false
-  javaHomeOption: 'JDKVersion'
-  mavenVersionOption: 'Default'
-  effectivePomSkip: true
-  sonarQubeRunAnalysis: false
-  goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dserver=$(server) 
-  -Denvironment=$(environment) -Dworkers=$(workers) -DworkerType=$(workerType) 
-  -DmuleVersion=$(muleVersion) -Dusername=$(username) -Dpassword=$(password)'
+    inputs:
+      mavenPomFile: 'pom.xml'
+      mavenOptions: '-Xmx3072m'
+      jdkVersionOption: '1.8'
+      jdkArchitectureOption: 'x64'
+      mavenAuthenticateFeed: true
+      publishJUnitResults: false
+      javaHomeOption: 'JDKVersion'
+      mavenVersionOption: 'Default'
+      effectivePomSkip: true
+      sonarQubeRunAnalysis: false
+      goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dserver=$(server) 
+      -Denvironment=$(environment) -Dworkers=$(workers) -DworkerType=$(workerType) 
+      -DmuleVersion=$(muleVersion) -Dusername=$(username) -Dpassword=$(password)'
 
