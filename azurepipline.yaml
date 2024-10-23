@@ -54,4 +54,4 @@ steps:
       mavenVersionOption: 'Default'
       effectivePomSkip: true
       sonarQubeRunAnalysis: false
-      goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dserver=$(server) -Denvironment=Sandbox -Dworkers=1 -DworkerType=MICRO -DmuleVersion=4.4.0 Dusername=chaithanya_oct10 -Dpassword=Chaithu@516'
+      goals: 'clean install package deploy $(MAVEN_OPTS) -DmuleDeploy -Dserver=$(server) -Denvironment=Sandbox -Dworkers=1 -DworkerType=MICRO -DmuleVersion=4.4.0 -Dusername=$(username) -Dpassword=$(password)'
